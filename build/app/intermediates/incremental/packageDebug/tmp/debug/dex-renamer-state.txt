@@ -1,0 +1,4 @@
+#Tue May 10 17:26:09 IST 2022
+base.0=/Users/iMac/Mobile App Development/Projects/opal_white/build/app/intermediates/dex/debug/mergeDexDebug/classes.dex
+renamed.0=classes.dex
+path.0=classes.dex

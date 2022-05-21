@@ -1,0 +1,4 @@
+io/flutter/plugins/GeneratedPluginRegistrant.java
+ io.flutter.plugins.GeneratedPluginRegistrant
+opalwhite/com/opal_white/BuildConfig.java
+ opalwhite.com.opal_white.BuildConfig

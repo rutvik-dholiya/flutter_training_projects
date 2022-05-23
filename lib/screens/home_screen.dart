@@ -177,153 +177,160 @@ Widget storyImageWidget() => Column(
     );
 
 Widget postWidget() => Column(
-  children: [
-    Row(
       children: [
-        Container(
-          margin:
-              EdgeInsets.only(right: 7.5, left: 7.5, top: 7, bottom: 7),
-          decoration: BoxDecoration(
-            shape: BoxShape.circle,
-            border: Border.all(width: 1.5, color: Colors.deepOrange),
-          ),
-          child: Container(
-            margin: EdgeInsets.all(1.5),
-            height: 33,
-            width: 33,
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage("assets/images/profile.jpg"),
-                fit: BoxFit.fitWidth,
-              ),
-              shape: BoxShape.circle,
-            ),
-          ),
-        ),
-        Column(
+        Row(
           children: [
             Container(
-              margin: EdgeInsets.only(bottom: 1),
-              width: 200,
-              child: Text(
-                "rutvik.dholiya_98",
-                style: TextStyle(
-                  fontSize: 14,
-                  fontWeight: FontWeight.w700,
+              margin: EdgeInsets.only(right: 7.5, left: 7.5, top: 7, bottom: 7),
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                border: Border.all(width: 1.5, color: Colors.deepOrange),
+              ),
+              child: Container(
+                margin: EdgeInsets.all(1.5),
+                height: 33,
+                width: 33,
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage("assets/images/profile.jpg"),
+                    fit: BoxFit.fitWidth,
+                  ),
+                  shape: BoxShape.circle,
                 ),
               ),
             ),
-            Container(
-              width: 200,
-              child: Text(
-                "V Company Studios",
-                textAlign: TextAlign.left,
-                style: TextStyle(
-                  fontSize: 12.5,
-                  fontWeight: FontWeight.w400,
+            Column(
+              children: [
+                Container(
+                  margin: EdgeInsets.only(bottom: 1),
+                  width: 200,
+                  child: Text(
+                    "rutvik.dholiya_98",
+                    style: TextStyle(
+                      fontSize: 14,
+                      fontWeight: FontWeight.w700,
+                    ),
+                  ),
+                ),
+                Container(
+                  width: 200,
+                  child: Text(
+                    "V Company Studios",
+                    textAlign: TextAlign.left,
+                    style: TextStyle(
+                      fontSize: 12.5,
+                      fontWeight: FontWeight.w400,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            Expanded(
+              child: Container(
+                alignment: Alignment.centerRight,
+                child: IconButton(
+                  iconSize: 22,
+                  color: Colors.black54,
+                  onPressed: () {},
+                  icon: Icon(
+                    Icons.more_vert,
+                  ),
                 ),
               ),
             ),
           ],
         ),
-        Expanded(
-          child: Container(
-            alignment: Alignment.centerRight,
-            child: IconButton(
-              iconSize: 22,
-              color: Colors.black54,
-              onPressed: () {},
-              icon: Icon(
-                Icons.more_vert,
+        Container(
+          height: 490,
+          width: 490,
+          decoration: BoxDecoration(
+            color: Colors.black,
+            image: DecorationImage(
+              fit: BoxFit.fitWidth,
+              image: AssetImage("assets/images/profile.jpg"),
+            ),
+          ),
+        ),
+        Row(
+          children: [
+            Container(
+              child: IconButton(
+                onPressed: () {},
+                icon: Icon(Icons.favorite_border_outlined),
+                iconSize: 28,
               ),
             ),
-          ),
-        ),
-      ],
-    ),
-    Container(
-      height: 490,
-      width: 490,
-      decoration: BoxDecoration(
-        color: Colors.black,
-        image: DecorationImage(
-          fit: BoxFit.fitWidth,
-          image: AssetImage("assets/images/profile.jpg"),
-        ),
-      ),
-    ),
-    Row(
-      children: [
-        Container(
-          child: IconButton(
-            onPressed: () {},
-            icon: Icon(Icons.favorite_border_outlined),
-            iconSize: 28,
-          ),
-        ),
-        Container(
-          child: IconButton(
-            onPressed: () {},
-            icon: Icon(Icons.messenger_outline),
-            iconSize: 28,
-          ),
-        ),
-        Container(
-          child: IconButton(
-            onPressed: () {},
-            icon: Icon(Icons.send),
-            iconSize: 28,
-          ),
-        ),
-        Expanded(
-          child: Container(
-            alignment: Alignment.centerRight,
-            child: IconButton(
-              onPressed: () {},
-              icon: Icon(Icons.bookmark_border),
-              iconSize: 28,
+            Container(
+              child: IconButton(
+                onPressed: () {},
+                icon: Icon(Icons.messenger_outline),
+                iconSize: 27,
+              ),
             ),
-          ),
-        ),
-      ],
-    ),
-    Column(
-      children: [
-        Container(
-          padding: EdgeInsets.only(
-            left: 12.5,
-          ),
-          width: 500,
-          child: Text(
-            "41 likes",
-            style: TextStyle(
-              fontWeight: FontWeight.bold,
+            Container(
+              child: IconButton(
+                onPressed: () {},
+                icon: Icon(Icons.send),
+                iconSize: 27,
+              ),
             ),
-          ),
+            Expanded(
+              child: Container(
+                alignment: Alignment.centerRight,
+                child: IconButton(
+                  onPressed: () {},
+                  icon: Icon(Icons.bookmark_border),
+                  iconSize: 27,
+                ),
+              ),
+            ),
+          ],
         ),
-        Container(
-          width: 500,
-          padding: EdgeInsets.only(left: 12.5),
-          child: Text(
-            "rutvik.dholiya_98 Passion at it's peak.",
-            style: TextStyle(fontWeight: FontWeight.bold),
-          ),
-        ),
-        Container(
-          width: 500,
-          padding: EdgeInsets.only(left: 12.5),
-          child: Text(
-            "View all 74 comments",
-          ),
-        ),
-        Container(
-          width: 500,
-          padding: EdgeInsets.only(left: 12.5),
-          child: Text(
-            "1 day ago",
-          ),
+        Column(
+          children: [
+            Container(
+              padding: EdgeInsets.only(left: 12.5, bottom: 2),
+              width: 500,
+              child: Text(
+                "41,233 likes",
+                style: TextStyle(
+                  fontSize: 15,
+                  fontWeight: FontWeight.w800,
+                ),
+              ),
+            ),
+            Container(
+              width: 500,
+              padding: EdgeInsets.only(left: 12.5, bottom: 5),
+              child: Text.rich(
+                TextSpan(
+                  children: [
+                    TextSpan(
+                      text: "rutvik.dholiya_98 ",
+                      style: TextStyle(
+                        fontWeight: FontWeight.w800,
+                      ),
+                    ),
+                    TextSpan(
+                      text:
+                          "Passion at it's peak. It's just me with me only. Alone but not only one.",
+                      style: TextStyle(height: 1.35),
+                    )
+                  ],
+                ),
+              ),
+            ),
+            Container(
+              width: 500,
+              padding: EdgeInsets.only(left: 12.5, bottom: 15),
+              child: Text(
+                "View all 74 comments",
+                style: TextStyle(
+                  color: Colors.grey[600],
+                ),
+              ),
+            ),
+          ],
         ),
       ],
-    ),
-  ],
-);
+    );

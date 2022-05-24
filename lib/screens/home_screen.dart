@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:instagram/utils/util_helper.dart';
+
+import 'ChatPage.dart';
 
 class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);
@@ -33,18 +36,68 @@ class Home extends StatelessWidget {
           Container(
             margin: EdgeInsets.only(right: 11, left: 5.5),
             child: IconButton(
-              onPressed: () {},
+              onPressed: () {
+                goToNewPage(context, ChatPage());
+              },
               icon: Image(
                 height: 25,
                 width: 25,
                 image: AssetImage("assets/images/messenger.png"),
               ),
-              /*child: Icon(
-              Icons.send,
-              color: Colors.black,
-              size: 25,
-            ),*/
             ),
+          ),
+        ],
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        selectedItemColor: Colors.black,
+        iconSize: 30,
+        items: [
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.home_outlined,
+              color: Colors.black,
+            ),
+            label: "",
+            backgroundColor: Colors.white,
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.search,
+              color: Colors.black,
+            ),
+            label: "",
+            backgroundColor: Colors.white,
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.movie_outlined,
+              color: Colors.black,
+            ),
+            label: "",
+            backgroundColor: Colors.white,
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.favorite_outline,
+              color: Colors.black,
+            ),
+            label: "",
+            backgroundColor: Colors.white,
+          ),
+          BottomNavigationBarItem(
+            icon: Container(
+              height: 30,
+              width: 30,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                image: DecorationImage(
+                  fit: BoxFit.fitWidth,
+                  image: AssetImage("assets/images/profile.jpg"),
+                ),
+              ),
+            ),
+            label: "",
+            backgroundColor: Colors.white,
           ),
         ],
       ),

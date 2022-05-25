@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:instagram/utils/util_helper.dart';
-
 import 'ChatPage.dart';
 
 class Home extends StatelessWidget {

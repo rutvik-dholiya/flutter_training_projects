@@ -121,8 +121,182 @@ class ChatPage extends StatelessWidget {
                 ),
               ),
             ),
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                children: [
+                  OnlineProfileWidget(),
+                  OnlineProfileWidget(),
+                  OnlineProfileWidget(),
+                  OnlineProfileWidget(),
+                  OnlineProfileWidget(),
+                  OnlineProfileWidget(),
+                  OnlineProfileWidget(),
+                  OnlineProfileWidget(),
+                  OnlineProfileWidget(),
+                ],
+              ),
+            ),
+            Container(
+              padding: EdgeInsets.only(
+                left: 15,
+                top: 20,
+                bottom: 3,
+                right: 15,
+              ),
+              child: Row(
+                children: [
+                  Text(
+                    "Messages",
+                    style: TextStyle(
+                      fontSize: 17,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                  Expanded(
+                    child: Container(
+                      alignment: Alignment.topRight,
+                      child: TextButton(
+                        onPressed: () {},
+                        child: Text(
+                          "Requests(0)",
+                          style: TextStyle(
+                            fontSize: 15,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Container(
+              child: Expanded(
+                child: SingleChildScrollView(
+                  scrollDirection: Axis.vertical,
+                  child: Column(
+                    children: [
+                      ChatItemWidget(),
+                      ChatItemWidget(),
+                      ChatItemWidget(),
+                      ChatItemWidget(),
+                      ChatItemWidget(),
+                      ChatItemWidget(),
+                      ChatItemWidget(),
+                      ChatItemWidget(),
+                      ChatItemWidget(),
+                    ],
+                  ),
+                ),
+              ),
+            ),
           ],
         ),
+      ),
+    );
+  }
+}
+
+class OnlineProfileWidget extends StatelessWidget {
+  const OnlineProfileWidget({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Container(
+          width: 65,
+          height: 65,
+          margin: EdgeInsets.all(8),
+          decoration: BoxDecoration(
+            shape: BoxShape.circle,
+            image: DecorationImage(
+              fit: BoxFit.fitWidth,
+              image: AssetImage("assets/images/profile.jpg"),
+            ),
+          ),
+        ),
+        Container(
+          width: 70,
+          margin: EdgeInsets.only(left: 8),
+          child: Center(
+            child: Text(
+              "Rutvik Dholiya",
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+class ChatItemWidget extends StatelessWidget {
+  const ChatItemWidget({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: EdgeInsets.only(left: 17),
+      child: Row(
+        children: [
+          Container(
+            width: 60,
+            height: 60,
+            padding: EdgeInsets.all(2),
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              border: Border.all(
+                color: Colors.grey,
+                width: 1,
+              ),
+            ),
+            child: Container(
+              height: 58,
+              width: 58,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                image: DecorationImage(
+                  fit: BoxFit.fitWidth,
+                  image: AssetImage("assets/images/profile.jpg"),
+                ),
+              ),
+            ),
+          ),
+          Container(
+            height: 70,
+            child: Padding(
+              padding: EdgeInsets.only(left: 15),
+              child: Column(
+                children: [
+                  Expanded(
+                    child: Padding(
+                      child: Text(
+                        "Rutvik Dholiya",
+                        style: TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.w400,
+                        ),
+                      ),
+                      padding: EdgeInsets.only(top: 15),
+                    ),
+                  ),
+                  Expanded(
+                    child: Text(
+                      "Active 5h ago",
+                      style: TextStyle(
+                        fontSize: 14,
+                        color: Colors.grey[600],
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }

@@ -296,6 +296,19 @@ class ChatItemWidget extends StatelessWidget {
               ),
             ),
           ),
+          Expanded(
+            child: Container(
+              padding: EdgeInsets.only(right: 13),
+              alignment: Alignment.centerRight,
+              child: IconButton(
+                onPressed: () {},
+                icon: Icon(
+                  Icons.camera_alt_outlined,
+                  size: 30,
+                ),
+              ),
+            ),
+          ),
         ],
       ),
     );

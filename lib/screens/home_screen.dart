@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:instagram/screens/chat_page.dart';
+import 'package:instagram/screens/search_page.dart';
 import 'package:instagram/utils/util_helper.dart';
 
 class Home extends StatelessWidget {
@@ -65,9 +66,12 @@ class Home extends StatelessWidget {
             backgroundColor: Colors.white,
           ),
           BottomNavigationBarItem(
-            icon: Icon(
-              Icons.search,
+            icon: IconButton(
+              icon: Icon(Icons.search),
               color: Colors.black,
+              onPressed: () {
+                goToNewPage(context, SearchPage());
+              },
             ),
             label: "",
             backgroundColor: Colors.white,

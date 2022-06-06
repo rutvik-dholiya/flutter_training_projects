@@ -48,19 +48,11 @@ class SearchPage extends StatelessWidget {
               ),
             ),
             Expanded(
-              child: SingleChildScrollView(
+              child: ListView(
                 scrollDirection: Axis.vertical,
-                child: Column(
-                  children: [
-                    SearchCollection(),
-                    SearchCollection(),
-                    SearchCollection(),
-                    SearchCollection(),
-                    SearchCollection(),
-                    SearchCollection(),
-                    SearchCollection(),
-                  ],
-                ),
+                children: [
+                  SearchCollection(),
+                ],
               ),
             ),
           ],
@@ -70,48 +62,36 @@ class SearchPage extends StatelessWidget {
   }
 }
 
-class SearchCollection extends StatelessWidget {
-  const SearchCollection({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Row(
-          children: [
-            Expanded(
-              flex: 1,
-              child: Column(
-                children: [
-                  Expanded(
-                    child: SearchImage(),
-                    flex: 1,
-                  ),
-                  Expanded(
-                    child: SearchImage(),
-                    flex: 1,
-                  ),
-                ],
-              ),
-            ),
-            Expanded(
-              flex: 1,
-              child: Column(
-                children: [
-                  Expanded(
-                    child: SearchImage(),
-                  ),
-                  Expanded(
-                    child: SearchImage(),
-                  ),
-                ],
-              ),
-            ),
-          ],
-        ),
-      ],
-    );
-  }
+Widget SearchCollection() {
+  return Row(
+    children: [
+      Column(
+        children: [
+          Expanded(
+            child: SearchImage(),
+            flex: 1,
+          ),
+          Expanded(
+            child: SearchImage(),
+            flex: 1,
+          ),
+        ],
+      ),
+      Column(
+        children: [
+          Expanded(
+            child: SearchImage(),
+            flex: 1,
+          ),
+          Expanded(
+            child: SearchImage(),
+            flex: 1,
+          ),
+        ],
+      ),
+      Expanded(child: SearchImage(),),
+    ],
+  );
 }
 
 class SearchImage extends StatelessWidget {
@@ -119,11 +99,14 @@ class SearchImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
+
     return Container(
-      padding: EdgeInsets.all(10),
+      height: (size.width) / 3,
+      margin: EdgeInsets.all(1),
       decoration: BoxDecoration(
         image: DecorationImage(
-          fit: BoxFit.fill,
+          fit: BoxFit.fitWidth,
           image: AssetImage("assets/images/profile.jpg"),
         ),
       ),

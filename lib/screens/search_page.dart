@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:instagram/screens/profile.dart';
 
 class SearchPage extends StatelessWidget {
   const SearchPage({Key? key}) : super(key: key);
@@ -16,43 +17,57 @@ class SearchPage extends StatelessWidget {
                 color: Colors.grey[200],
                 borderRadius: BorderRadius.circular(10),
               ),
-              child: TextButton(
-                onPressed: () {},
-                child: Row(
-                  children: [
-                    Center(
-                      child: Padding(
-                        padding: EdgeInsets.only(left: 8.0),
-                        child: Icon(
-                          Icons.search,
-                          color: Colors.grey[600],
-                          size: 20,
-                        ),
+              child: Row(
+                children: [
+                  Center(
+                    child: Padding(
+                      padding: EdgeInsets.only(left: 8.0),
+                      child: Icon(
+                        Icons.search,
+                        color: Colors.grey[600],
+                        size: 20,
                       ),
                     ),
-                    Center(
-                      child: Padding(
-                        padding: const EdgeInsets.only(left: 20),
-                        child: Text(
-                          "Search",
-                          style: TextStyle(
-                            color: Colors.grey[600],
-                            fontSize: 18,
-                            fontWeight: FontWeight.w400,
-                          ),
-                        ),
+                  ),
+                  Expanded(
+                    child: TextFormField(
+                      validator: (value) {
+                        if (value == null) return "Search home office";
+                      },
+                      controller: userInput,
+                      style: TextStyle(
+                        color: Colors.grey[600],
+                        fontSize: 18,
+                        fontWeight: FontWeight.w400,
+                        decoration: TextDecoration.none,
                       ),
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
             ),
             Expanded(
-              child: ListView(
-                scrollDirection: Axis.vertical,
-                children: [
-                  SearchCollection(),
-                ],
+              child: SingleChildScrollView(
+                child: Column(
+                  children: [
+                    ImageRowWidget(),
+                    ImageRowWidget(),
+                    ImageRowWidget(),
+                    ImageRowWidget(),
+                    ImageRowWidget(),
+                    ImageRowWidget(),
+                    ImageRowWidget(),
+                    ImageRowWidget(),
+                    ImageRowWidget(),
+                    ImageRowWidget(),
+                    ImageRowWidget(),
+                    ImageRowWidget(),
+                    ImageRowWidget(),
+                    ImageRowWidget(),
+                    ImageRowWidget(),
+                    ImageRowWidget(),
+                  ],
+                ),
               ),
             ),
           ],
@@ -62,54 +77,40 @@ class SearchPage extends StatelessWidget {
   }
 }
 
-Widget SearchCollection() {
-  return Row(
+Widget ImageRowWidget() {
+  return Column(
     children: [
-      Column(
+      Row(
         children: [
           Expanded(
-            child: SearchImage(),
             flex: 1,
+            child: Container(
+              padding: EdgeInsets.only(right: 2),
+              child: Image.network(
+                  "https://pixlok.com/wp-content/uploads/2021/01/CSK_Logo_with_satin_flag.jpg"),
+            ),
           ),
           Expanded(
-            child: SearchImage(),
             flex: 1,
+            child: Container(
+              padding: EdgeInsets.only(right: 1, left: 1),
+              child: Image.network(
+                  "https://pixlok.com/wp-content/uploads/2021/01/CSK_Logo_with_satin_flag.jpg"),
+            ),
+          ),
+          Expanded(
+            flex: 1,
+            child: Container(
+              padding: EdgeInsets.only(left: 2),
+              child: Image.network(
+                  "https://pixlok.com/wp-content/uploads/2021/01/CSK_Logo_with_satin_flag.jpg"),
+            ),
           ),
         ],
       ),
-      Column(
-        children: [
-          Expanded(
-            child: SearchImage(),
-            flex: 1,
-          ),
-          Expanded(
-            child: SearchImage(),
-            flex: 1,
-          ),
-        ],
-      ),
-      Expanded(child: SearchImage(),),
+      const SizedBox(height: 3)
     ],
   );
 }
 
-class SearchImage extends StatelessWidget {
-  const SearchImage({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    var size = MediaQuery.of(context).size;
-
-    return Container(
-      height: (size.width) / 3,
-      margin: EdgeInsets.all(1),
-      decoration: BoxDecoration(
-        image: DecorationImage(
-          fit: BoxFit.fitWidth,
-          image: AssetImage("assets/images/profile.jpg"),
-        ),
-      ),
-    );
-  }
-}
+TextEditingController userInput = TextEditingController();

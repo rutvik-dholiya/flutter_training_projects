@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:instagram/screens/profile.dart';
+import 'package:instagram/screens/search.dart';
+import 'package:instagram/utils/util_helper.dart';
 
 class SearchPage extends StatelessWidget {
   const SearchPage({Key? key}) : super(key: key);
@@ -8,42 +9,101 @@ class SearchPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        bottomNavigationBar: BottomNavigationBar(
+          selectedItemColor: Colors.black,
+          iconSize: 30,
+          items: [
+            BottomNavigationBarItem(
+              icon: Icon(
+                Icons.home_outlined,
+                color: Colors.black,
+              ),
+              label: "",
+              backgroundColor: Colors.white,
+            ),
+            BottomNavigationBarItem(
+              icon: IconButton(
+                icon: Icon(Icons.search),
+                color: Colors.black,
+                onPressed: () {
+                  goToNewPage(context, SearchPage());
+                },
+              ),
+              label: "",
+              backgroundColor: Colors.white,
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(
+                Icons.movie_outlined,
+                color: Colors.black,
+              ),
+              label: "",
+              backgroundColor: Colors.white,
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(
+                Icons.favorite_outline,
+                color: Colors.black,
+              ),
+              label: "",
+              backgroundColor: Colors.white,
+            ),
+            BottomNavigationBarItem(
+              icon: Container(
+                height: 30,
+                width: 30,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  image: DecorationImage(
+                    fit: BoxFit.fitWidth,
+                    image: AssetImage("assets/images/profile.jpg"),
+                  ),
+                ),
+              ),
+              label: "",
+              backgroundColor: Colors.white,
+            ),
+          ],
+        ),
         body: Column(
           children: [
             Container(
-              margin: EdgeInsets.all(10),
+              margin: EdgeInsets.only(left: 18, right: 18, bottom: 10, top: 10),
               height: 35,
               decoration: BoxDecoration(
-                color: Colors.grey[200],
+                color: Colors.grey[300],
                 borderRadius: BorderRadius.circular(10),
               ),
-              child: Row(
-                children: [
-                  Center(
-                    child: Padding(
-                      padding: EdgeInsets.only(left: 8.0),
-                      child: Icon(
-                        Icons.search,
-                        color: Colors.grey[600],
-                        size: 20,
+              child: GestureDetector(
+                onTap: () {
+                  goToNewPage(context, Search());
+                },
+                child: Row(
+                  children: [
+                    Center(
+                      child: Padding(
+                        padding: EdgeInsets.only(left: 8.0),
+                        child: Icon(
+                          Icons.search,
+                          color: Colors.black,
+                          size: 23.5,
+                        ),
                       ),
                     ),
-                  ),
-                  Expanded(
-                    child: TextFormField(
-                      validator: (value) {
-                        if (value == null) return "Search home office";
-                      },
-                      controller: userInput,
-                      style: TextStyle(
-                        color: Colors.grey[600],
-                        fontSize: 18,
-                        fontWeight: FontWeight.w400,
-                        decoration: TextDecoration.none,
+                    SizedBox(
+                      width: 15,
+                    ),
+                    Expanded(
+                      child: Text(
+                        "Search",
+                        style: TextStyle(
+                          color: Colors.grey[700],
+                          fontSize: 16,
+                        ),
                       ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
             Expanded(
@@ -76,6 +136,7 @@ class SearchPage extends StatelessWidget {
     );
   }
 }
+
 
 Widget ImageRowWidget() {
   return Column(
@@ -112,5 +173,3 @@ Widget ImageRowWidget() {
     ],
   );
 }
-
-TextEditingController userInput = TextEditingController();

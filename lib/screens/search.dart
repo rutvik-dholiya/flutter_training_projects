@@ -45,9 +45,9 @@ class Search extends StatelessWidget {
                         controller: userInput,
                         decoration: InputDecoration(
                           suffixIcon: Container(
-                            padding: EdgeInsets.only(right: 10,left: 20),
+                            padding: EdgeInsets.only(right: 10, left: 20),
                             child: AnimatedTextKit(
-                              pause: Duration(milliseconds: 500),
+                              pause: Duration(milliseconds: 1000),
                               animatedTexts: [
                                 RotateAnimatedText(
                                   "Search \"home decor\"",
@@ -56,6 +56,7 @@ class Search extends StatelessWidget {
                                     color: Colors.grey[700],
                                     fontSize: 16,
                                   ),
+                                  duration: Duration(milliseconds: 1000),
                                 ),
                                 RotateAnimatedText(
                                   "Search \"knitting\"",
@@ -64,6 +65,7 @@ class Search extends StatelessWidget {
                                     color: Colors.grey[700],
                                     fontSize: 16,
                                   ),
+                                  duration: Duration(milliseconds: 1000),
                                 ),
                                 RotateAnimatedText(
                                   "Search \"healing sounds\"",
@@ -72,6 +74,7 @@ class Search extends StatelessWidget {
                                     color: Colors.grey[700],
                                     fontSize: 16,
                                   ),
+                                  duration: Duration(milliseconds: 1000),
                                 ),
                                 RotateAnimatedText(
                                   "Search \"coffee\"",
@@ -80,6 +83,7 @@ class Search extends StatelessWidget {
                                     color: Colors.grey[700],
                                     fontSize: 16,
                                   ),
+                                  duration: Duration(milliseconds: 1000),
                                 ),
                                 RotateAnimatedText(
                                   "Search \"skateboard\"",
@@ -88,6 +92,7 @@ class Search extends StatelessWidget {
                                     color: Colors.grey[700],
                                     fontSize: 16,
                                   ),
+                                  duration: Duration(milliseconds: 1000),
                                 ),
                                 RotateAnimatedText(
                                   "Search \"nail design\"",
@@ -96,6 +101,7 @@ class Search extends StatelessWidget {
                                     color: Colors.grey[700],
                                     fontSize: 16,
                                   ),
+                                  duration: Duration(milliseconds: 1000),
                                 ),
                                 RotateAnimatedText(
                                   "Search \"rainbow makeup\"",
@@ -104,6 +110,7 @@ class Search extends StatelessWidget {
                                     color: Colors.grey[700],
                                     fontSize: 16,
                                   ),
+                                  duration: Duration(milliseconds: 1000),
                                 ),
                                 RotateAnimatedText(
                                   "Search \"japanese pancake\"",
@@ -112,6 +119,7 @@ class Search extends StatelessWidget {
                                     color: Colors.grey[700],
                                     fontSize: 16,
                                   ),
+                                  duration: Duration(milliseconds: 1000),
                                 ),
                                 RotateAnimatedText(
                                   "Search \"playful creations\"",
@@ -120,6 +128,7 @@ class Search extends StatelessWidget {
                                     color: Colors.grey[700],
                                     fontSize: 16,
                                   ),
+                                  duration: Duration(milliseconds: 1000),
                                 ),
                                 RotateAnimatedText(
                                   "Search \"oil painting\"",
@@ -128,6 +137,7 @@ class Search extends StatelessWidget {
                                     color: Colors.grey[700],
                                     fontSize: 16,
                                   ),
+                                  duration: Duration(milliseconds: 1000),
                                 ),
                               ],
                             ),

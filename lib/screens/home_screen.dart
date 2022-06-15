@@ -1,10 +1,10 @@
 import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:instagram/screens/chat_page.dart';
 import 'package:instagram/screens/search_page.dart';
 import 'package:instagram/utils/util_helper.dart';
+import 'login.dart';
 
 class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);
@@ -93,14 +93,19 @@ class Home extends StatelessWidget {
             backgroundColor: Colors.white,
           ),
           BottomNavigationBarItem(
-            icon: Container(
-              height: 30,
-              width: 30,
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                image: DecorationImage(
-                  fit: BoxFit.fitWidth,
-                  image: AssetImage("assets/images/profile.jpg"),
+            icon: GestureDetector(
+              onTap: () {
+                goToNewPage(context, LoginPage());
+              },
+              child: Container(
+                height: 30,
+                width: 30,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  image: DecorationImage(
+                    fit: BoxFit.fitWidth,
+                    image: AssetImage("assets/images/profile.jpg"),
+                  ),
                 ),
               ),
             ),

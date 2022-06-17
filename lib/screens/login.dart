@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:instagram/screens/home_screen.dart';
 import 'package:instagram/screens/search.dart';
+import 'package:instagram/screens/sign_up.dart';
 import 'package:instagram/utils/util_helper.dart';
 
 class LoginPage extends StatelessWidget {
@@ -243,27 +244,32 @@ class LoginPage extends StatelessWidget {
                   color: Colors.grey.shade300,
                 ),
               ),
-              Container(
-                color: Colors.white,
-                margin: EdgeInsets.only(top: 15, bottom: 1),
-                child: Text.rich(
-                  TextSpan(
-                    text: "Don't have an account?",
-                    style: TextStyle(
-                      color: Colors.grey.shade500,
-                      fontSize: 13,
-                    ),
-                    children: [
-                      TextSpan(
-                        text: " Sign up.",
-                        style: TextStyle(
-                          color: Colors.indigo.shade900,
-                          fontWeight: FontWeight.w500,
-                        ),
+              GestureDetector(
+                child: Container(
+                  color: Colors.white,
+                  margin: EdgeInsets.only(top: 15, bottom: 1),
+                  child: Text.rich(
+                    TextSpan(
+                      text: "Don't have an account?",
+                      style: TextStyle(
+                        color: Colors.grey.shade500,
+                        fontSize: 13,
                       ),
-                    ],
+                      children: [
+                        TextSpan(
+                          text: " Sign up.",
+                          style: TextStyle(
+                            color: Colors.indigo.shade900,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
+                onTap: () {
+                  goToNewPage(context, SignUpPage());
+                },
               ),
             ],
           ),

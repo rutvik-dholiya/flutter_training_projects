@@ -36,6 +36,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   js: ^0.6.4
   animated_text_kit: ^4.2.1
+  modal_bottom_sheet: ^2.0.1
 
 dev_dependencies:
   flutter_test:

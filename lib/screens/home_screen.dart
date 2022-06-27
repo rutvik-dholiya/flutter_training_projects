@@ -2,6 +2,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:instagram/screens/chat_page.dart';
+import 'package:instagram/screens/profile.dart';
 import 'package:instagram/screens/search_page.dart';
 import 'package:instagram/utils/util_helper.dart';
 import 'login.dart';
@@ -95,7 +96,7 @@ class Home extends StatelessWidget {
           BottomNavigationBarItem(
             icon: GestureDetector(
               onTap: () {
-                goToNewPage(context, LoginPage());
+                goToNewPage(context, ProfilePage());
               },
               child: Container(
                 height: 30,

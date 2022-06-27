@@ -12,46 +12,103 @@ class ProfilePage extends StatelessWidget {
       body: SafeArea(
         child: Column(
           children: [
-            Container(
-              child: ListTile(
-                onTap: () {
-                  showMaterialModalBottomSheet(
-                    context: context,
-
-                    builder: (context) => Container(
-                      child: ListView(
+            Row(
+              children: [
+                Container(
+                  child: GestureDetector(
+                    onTap: () {
+                      showMaterialModalBottomSheet(
+                        context: context,
+                        builder: (context) => Container(
+                          child: ListView(
+                            children: [
+                              BottomSheetElement(),
+                              BottomSheetElement(),
+                              BottomSheetElement(),
+                              BottomSheetElement(),
+                            ],
+                          ),
+                        ),
+                      );
+                    },
+                    child: Padding(
+                      padding: const EdgeInsets.only(
+                        top: 20,
+                        left: 20,
+                        bottom: 20,
+                      ),
+                      child: Row(
                         children: [
-                          BottomSheetElement(),
-                          BottomSheetElement(),
-                          BottomSheetElement(),
-                          BottomSheetElement(),
+                          Container(
+                            padding: EdgeInsets.only(right: 4),
+                            child: Text(
+                              "rutvik.dhliya_98",
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 23,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                          ),
+                          Container(
+                            child: Icon(
+                              Icons.arrow_drop_down,
+                              color: Colors.grey,
+                            ),
+                          ),
                         ],
                       ),
                     ),
-                  );
-                },
-                title: Row(
-                  children: [
-                    Container(
-                      padding: EdgeInsets.only(right: 4),
-                      child: Text(
-                        "rutvik.dhliya_98",
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 23,
-                          fontWeight: FontWeight.w600,
+                  ),
+                ),
+                SizedBox(width: 90),
+                Expanded(
+                  child: IconButton(
+                    onPressed: () {},
+                    icon: Icon(Icons.add),
+                  ),
+                ),
+                Expanded(
+                  child: IconButton(
+                    onPressed: () {},
+                    icon: Icon(Icons.menu),
+                  ),
+                ),
+              ],
+            ),
+            Row(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(left: 20.0),
+                  child: Column(
+                    children: [
+                      CircleAvatar(
+                        backgroundImage:
+                            AssetImage('assets/images/profile.jpg'),
+                        radius: 45,
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(top: 7.0),
+                        child: Text(
+                          "Rutvik Dholiya",
+                          style: TextStyle(
+                            fontSize: 15,
+                            fontWeight: FontWeight.w500,
+                            color: Colors.black,
+                          ),
                         ),
                       ),
-                    ),
-                    Container(
-                      child: Icon(
-                        Icons.arrow_drop_down,
-                        color: Colors.grey,
-                      ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
-              ),
+                Expanded(
+                  child: Row(
+                    children: [
+
+                    ],
+                  ),
+                ),
+              ],
             ),
           ],
         ),

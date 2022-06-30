@@ -241,20 +241,200 @@ class ProfilePage extends StatelessWidget {
                 ),
               ],
             ),
-            PageView(
+            Padding(
+              padding: const EdgeInsets.only(left: 20.0, top: 25, bottom: 10),
+              child: StoryHighlights(),
+            ),
+            PageItem(),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class PageItem extends StatefulWidget {
+  const PageItem({Key? key}) : super(key: key);
+
+  @override
+  State<PageItem> createState() => _PageItemState();
+}
+
+class _PageItemState extends State<PageItem> {
+  int? index = 0;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Row(
+          children: [
+            Expanded(
+              child: GestureDetector(
+                onTap: () {
+                  setState(() {
+                    index = 0;
+                  });
+                },
+                child: Container(
+                  padding: EdgeInsets.all(20),
+                  child: Icon(
+                    Icons.grid_on_outlined,
+                    size: 30,
+                    color: index == 0 ? Colors.black : Colors.grey,
+                  ),
+                ),
+              ),
+            ),
+            Expanded(
+              child: GestureDetector(
+                onTap: () {
+                  setState(() {
+                    index = 1;
+                  });
+                },
+                child: Container(
+                  padding: EdgeInsets.all(20),
+                  child: Icon(
+                    Icons.contacts_outlined,
+                    size: 30,
+                    color: index == 1 ? Colors.black : Colors.grey,
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
+        Container(
+          child: (index == 0) ? Page1() : Page2(),
+        ),
+      ],
+    );
+  }
+}
+
+class Page1 extends StatefulWidget {
+  const Page1({Key? key}) : super(key: key);
+
+  @override
+  State<Page1> createState() => _Page1State();
+}
+
+class _Page1State extends State<Page1> {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: SingleChildScrollView(
+        scrollDirection: Axis.vertical,
+        child: Column(
+          children: [
+            ImageRowWidget(),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class Page2 extends StatefulWidget {
+  const Page2({Key? key}) : super(key: key);
+
+  @override
+  State<Page2> createState() => _Page2State();
+}
+
+class _Page2State extends State<Page2> {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: SingleChildScrollView(
+        scrollDirection: Axis.vertical,
+        child: Column(
+          children: [
+            ImageRowWidget(),
+            ImageRowWidget(),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class StoryHighlights extends StatefulWidget {
+  const StoryHighlights({Key? key, bool? show}) : super(key: key);
+
+  @override
+  State<StoryHighlights> createState() => _StoryHighlightsState();
+}
+
+class _StoryHighlightsState extends State<StoryHighlights> {
+  bool _show = true;
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: () {
+        setState(() {
+          _show = !_show;
+        });
+      },
+      child: Column(
+        children: [
+          Row(
+            children: [
+              Expanded(
+                flex: 9,
+                child: Container(
+                  child: Text(
+                    "Story Highlights",
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 14,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                ),
+              ),
+              Expanded(
+                flex: 1,
+                child: Icon(
+                  _show ? Icons.arrow_drop_up : Icons.arrow_drop_down,
+                  size: 16,
+                ),
+              ),
+            ],
+          ),
+          Padding(
+            padding: const EdgeInsets.only(top: 10),
+            child: Row(
               children: [
-                SingleChildScrollView(
-                  child: Column(
-                    children: [
-                      ImageRowWidget(),
-                      ImageRowWidget(),
-                    ],
+                Visibility(
+                  visible: _show,
+                  child: GestureDetector(
+                    onTap: () {},
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        shape: BoxShape.circle,
+                        border: Border.all(
+                          color: Colors.black,
+                          width: 1,
+                        ),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.all(20.0),
+                        child: Text(
+                          "+",
+                          style: TextStyle(color: Colors.black, fontSize: 25),
+                        ),
+                      ),
+                    ),
                   ),
                 ),
               ],
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
